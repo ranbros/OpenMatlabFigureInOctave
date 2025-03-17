@@ -108,14 +108,10 @@ for ii = 1:length(figstruct)
 
 
         case 'scribe.legend'
-            hlegoriginal = figstruct(ii).children(jj).properties.UserData.handles;
-            for kk = 1:length(hlegoriginal)
-                hleg(kk) = hkid(find(hkidoriginal(:)==hlegoriginal(kk), 1));
-            end
-            leg = figstruct(ii).children(jj).properties.UserData.lstrings;
-            hlegend(ii,:) = legend(hleg, leg);
+            legoriginal = figstruct(ii).children(jj).properties.String;%UserData.handles;
+            legend(legoriginal);
 
-            otherwise % not Axes or Legend. 
+            otherwise % not Axes or Legend.
             continue
         end
 
